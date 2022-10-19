@@ -189,41 +189,10 @@
 						</div>	
 				</div>
 				<div class="col-12 col-sm-12 col-md-6 ">	
-				<?php
-					if(isset($_POST['envia'])) {
-						$nome= $_POST['nome'];
-						$email= $_POST['email'];
-						$telefone= $_POST['telefone'];
-						$mensagem= $_POST['mensagem'];
-						
-						//email remetente
-						$email_remetente = "localhost";
-						
-						//configurações do email
-						$email_destinatario = "jessica.lyra@outlook.com";
-						$email_reply ="$email";
-						$email_assunto ="Contato do meu site";
-						
-						//montando o corpo da mensagem
-						$email_conteudo = "Nome = $nome \n";
-						$email_conteudo .="Email = $email \n";
-						$email_conteudo .="Telefone = $telefone \n";
-						$email_conteudo .= "Mensagem = $mensagem \n";
-						
-						$email_headers = implode("\n", array ("From: $email_remetente", "Reply-to: $email_reply", "Return_Path: $email_remetente", "MIME-version: 1.0", "X-Priority: 3", "Content-Type: text/html; charset=UTF-8"));
-						
-						//enviando o email
-						if (mail($email_destinatario, $email_assunto, $email_conteudo, $email_headers)) {
-							echo "</b>Email Enviado com sucesso!</b>";
-						} else {
-							echo "</b>Falha no envio d E-mail</b>";
-						}
-						
-					}						
-				?>
+				
 					<h1>Contato</h1>
 					
-					<form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
+					<form action="" method="POST">
 						<input type="text" placeholder="Nome" name="nome"></input><br>
 						
 						<input type="text" placeholder="Email" name="email"></input><br>
